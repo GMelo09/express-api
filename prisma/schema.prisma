@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
 
 model User {
@@ -21,7 +21,46 @@ model User {
   createdAt DateTime @default(now())
 }
 
-model client {
-  id_cliente        Int      @id @default(autoincrement())
-  nome              String?   
+
+model Cliente {
+  id_cliente Int    @id @default(autoincrement())
+  nome       String @db.VarChar(100)
+  cpf        String @unique @db.VarChar(14)
+  email      String @db.VarChar(100)
+
+  @@map("clientes")
+}
+
+model Fornecedor {
+  idFornecedor   Int      @id @default(autoincrement())
+  nomeFornecedor String
+  documento      String   @unique
+  email          String?
+  ativo          Boolean  @default(true)
+  criadoEm       DateTime @default(now())
+  atualizadoEm   DateTime @updatedAt
+
+  telefones      TelefoneFornecedor[]
+  enderecos      EnderecoFornecedor[]
+}
+
+model TelefoneFornecedor {
+  idTelefone   Int        @id @default(autoincrement())
+  numero       String
+  fornecedorId Int
+
+  fornecedor   Fornecedor @relation(fields: [fornecedorId], references: [idFornecedor])
+}
+
+model EnderecoFornecedor {
+  idEndereco   Int        @id @default(autoincrement())
+  logradouro   String
+  numero       String?
+  bairro       String
+  cidade       String
+  estado       String
+  cep          String
+  fornecedorId Int
+
+  fornecedor   Fornecedor @relation(fields: [fornecedorId], references: [idFornecedor])
 }

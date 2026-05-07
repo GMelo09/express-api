@@ -3,10 +3,8 @@ import helmet from 'helmet';
 import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import  Logger  from './config/logger';
+import Logger from './config/logger';
 import routes from './routes'; // Importa as rotas centralizadas
-//import  ipv4  from 'zod';
-import { hostname } from 'node:os';
 
 dotenv.config();
 
@@ -29,5 +27,5 @@ app.use(routes);
 
 // --- Inicialização ---
 app.listen(PORT, () => {
-  Logger.info(`🚀 Servidor executando na porta ${PORT}}`);
+  Logger.info(`🚀 Servidor a correr na porta ${PORT}`);
 });

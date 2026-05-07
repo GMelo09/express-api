@@ -1,0 +1,109 @@
+2026-04-27 14:11:27:1127 [31merror[39m: [31mErro ao criar usuário: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.user.create()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\user.services.ts:6:36[39m
+
+[31m  3 [39m
+[31m  4 export const createUser = async (name: string, email: string, password: string) => {[39m
+[31m  5     const hashedPassword = await bcrypt.hash(password, 10);[39m
+[31m→ 6     const user = await prisma.user.create([39m
+[31mUnique constraint failed on the fields: (`email`)[39m
+2026-04-28 14:16:56:1656 [31merror[39m: [31mErro ao criar cliente: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.cliente.create()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\cliente.services.ts:8:42[39m
+
+[31m  5     cpf: string,[39m
+[31m  6     email: string[39m
+[31m  7 ) => {[39m
+[31m→ 8     const cliente = await prisma.cliente.create([39m
+[31mUnique constraint failed on the fields: (`cpf`)[39m
+2026-05-06 13:44:28:4428 [31merror[39m: [31mErro ao criar cliente: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.cliente.create()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\cliente.services.ts:8:42[39m
+
+[31m  5     cpf: string,[39m
+[31m  6     email: string[39m
+[31m  7 ) => {[39m
+[31m→ 8     const cliente = await prisma.cliente.create([39m
+[31mUnique constraint failed on the fields: (`cpf`)[39m
+2026-05-06 16:24:18:2418 [31merror[39m: [31mErro ao fazer login: Error: User not found[39m
+2026-05-06 16:33:58:3358 [31merror[39m: [31mErro ao excluir fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.delete()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:74:42[39m
+
+[31m  71 // Remove relacionamentos primeiro para respeitar as foreign keys[39m
+[31m  72 await prisma.telefoneFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m  73 await prisma.enderecoFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m→ 74 return await prisma.fornecedor.delete([39m
+[31mAn operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.[39m
+2026-05-07 13:44:37:4437 [31merror[39m: [31mErro ao excluir fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.delete()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:74:42[39m
+
+[31m  71 // Remove relacionamentos primeiro para respeitar as foreign keys[39m
+[31m  72 await prisma.telefoneFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m  73 await prisma.enderecoFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m→ 74 return await prisma.fornecedor.delete([39m
+[31mAn operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.[39m
+2026-05-07 13:46:43:4643 [31merror[39m: [31mErro ao criar fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.create()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:19:36[39m
+
+[31m  16 }) => {[39m
+[31m  17     const { telefones, enderecos, ...fornecedorData } = data;[39m
+[31m  18 [39m
+[31m→ 19     return await prisma.fornecedor.create([39m
+[31mUnique constraint failed on the fields: (`documento`)[39m
+2026-05-07 13:46:57:4657 [31merror[39m: [31mErro ao excluir fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.delete()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:74:42[39m
+
+[31m  71 // Remove relacionamentos primeiro para respeitar as foreign keys[39m
+[31m  72 await prisma.telefoneFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m  73 await prisma.enderecoFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m→ 74 return await prisma.fornecedor.delete([39m
+[31mAn operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.[39m
+2026-05-07 13:46:58:4658 [31merror[39m: [31mErro ao excluir fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.delete()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:74:42[39m
+
+[31m  71 // Remove relacionamentos primeiro para respeitar as foreign keys[39m
+[31m  72 await prisma.telefoneFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m  73 await prisma.enderecoFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m→ 74 return await prisma.fornecedor.delete([39m
+[31mAn operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.[39m
+2026-05-07 13:47:01:471 [31merror[39m: [31mErro ao excluir fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.delete()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:74:42[39m
+
+[31m  71 // Remove relacionamentos primeiro para respeitar as foreign keys[39m
+[31m  72 await prisma.telefoneFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m  73 await prisma.enderecoFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m→ 74 return await prisma.fornecedor.delete([39m
+[31mAn operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.[39m
+2026-05-07 13:47:01:471 [31merror[39m: [31mErro ao excluir fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.delete()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:74:42[39m
+
+[31m  71 // Remove relacionamentos primeiro para respeitar as foreign keys[39m
+[31m  72 await prisma.telefoneFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m  73 await prisma.enderecoFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m→ 74 return await prisma.fornecedor.delete([39m
+[31mAn operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.[39m
+2026-05-07 13:47:02:472 [31merror[39m: [31mErro ao excluir fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.delete()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:74:42[39m
+
+[31m  71 // Remove relacionamentos primeiro para respeitar as foreign keys[39m
+[31m  72 await prisma.telefoneFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m  73 await prisma.enderecoFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m→ 74 return await prisma.fornecedor.delete([39m
+[31mAn operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.[39m
+2026-05-07 13:47:02:472 [31merror[39m: [31mErro ao excluir fornecedor: PrismaClientKnownRequestError: [39m
+[31mInvalid `prisma.fornecedor.delete()` invocation in[39m
+[31mC:\Users\gustavo.mlima10\OneDrive - SENAC - SP\Documentos\api-gustavo\express-api\src\services\fornecedor.services.ts:74:42[39m
+
+[31m  71 // Remove relacionamentos primeiro para respeitar as foreign keys[39m
+[31m  72 await prisma.telefoneFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m  73 await prisma.enderecoFornecedor.deleteMany({ where: { fornecedorId: idFornecedor } });[39m
+[31m→ 74 return await prisma.fornecedor.delete([39m
+[31mAn operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.[39m
